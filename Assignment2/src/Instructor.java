@@ -1,4 +1,4 @@
-public class Instructor
+public class Instructor implements Commenter
 {
     private String name;
     private int ID;

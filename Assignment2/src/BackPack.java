@@ -47,9 +47,9 @@ public class BackPack
         courses.add(new Course());
         Course course = courses.get(0);
         for (int i = 0; i < 2; i++)
-            instructors.add(new Instructor("Instructor-" + Integer.toString(i), i));
+            addInstructor("Instructor-" + i, i);
         for (int i = 0; i < 3; i++)
-            students.add(new Student("Student-" + Integer.toString(i), i));
+            addStudent("Student-" + i, i);
         
     
         while(true) {
@@ -130,11 +130,45 @@ public class BackPack
                             break;
                         }
                         case 5: {
-            
+                            ArrayList<Assessable> assessables = course.getAssessables();
+                            if (assessables.size() == 0) {
+                                System.out.println("No assessments posted yet. ");
+                                break;
+                            }
+                            for (int i = 0; i < assessables.size(); i++)
+                                System.out.println("ID: " + i + assessables.get(i).toString() + "\n_______________________________________");
+                            System.out.print("Enter ID of assessment to view submissions: ");
+                            Assessable assessable = assessables.get(scanner.nextInt());
+                            scanner.nextLine();
+                            System.out.println("Choose ID from these ungraded submissions:");
+                            for (Student stu : assessable.getUngradedSubmissions())
+                                System.out.println(stu);
+                            Student stu = students.get(scanner.nextInt());
+                            System.out.println(assessable.getSubmission(stu));
+                            System.out.println("______________________________________");
+                            System.out.println("Max marks: " + assessable.getMaxMarks());
+                            System.out.print("Marks scored: ");
+                            assessable.gradeSubmission(stu, instructor, scanner.nextInt());
+                            scanner.nextLine();
+                            break;
                         }
-                        case 6:
+                        case 6: {
+                            ArrayList<Assessable> open = course.getOpenAssessables();
+                            if (open.size() == 0)
+                                System.out.println("There are currently no open assessments.");
+                            else {
+                                for (int i = 0; i < open.size(); i++)
+                                    System.out.println("ID: " + i + open.get(i).toString() + "\n________________________");
+                                System.out.print("Enter ID of assessment to close: ");
+                                open.get(scanner.nextInt()).close();
+                                scanner.nextLine();
+                            }
+                            break;
+                        }
                         case 7:
-                        case 8:
+                        case 8: {
+                            course.addComment(instructor);
+                        }
                         case 9: {
                             break;
                         }
@@ -163,14 +197,40 @@ public class BackPack
                             break;
                         }
                         case 3 : {
+                            ArrayList<Assessable> pending = course.getPendingAssessables(student);
+                            for (int i = 0; i < pending.size(); i++)
+                                System.out.println("ID: " + i + pending.get(i).toString());
+                            System.out.print("Enter ID of assessment: ");
+                            int assessmentID = scanner.nextInt();
+                            scanner.nextLine();
+                            pending.get(assessmentID).takeSubmission(student);
+                        }
+                        case 4 : {
+                            System.out.println("Graded submissions");
+                            course.printGradedAssessables(student);
+                            System.out.println("Ungraded submissions");
+                            course.printUngradedAssessables(student);
+                            break;
+                        }
+                        case 5 : {
                         
                         }
-                        
+                        case 6 : {
+                            course.addComment(student);
+                        }
                     }
                 }
                 
             }
         }
+    }
+    
+    public void addInstructor(String name, int ID) {
+        instructors.add(new Instructor(name, ID));
+    }
+    
+    public void addStudent(String name, int ID) {
+        students.add(new Student(name, ID));
     }
     
     public static void main(String[] args) {

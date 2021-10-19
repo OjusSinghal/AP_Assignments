@@ -9,9 +9,9 @@
       <change beforePath="$PROJECT_DIR$/src/Assessable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assessable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assignment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BackPack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackPack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commentable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commentable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LectureSlide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LectureSlide.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LectureVideo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LectureVideo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Quiz.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Student.java" afterDir="false" />
     </list>
@@ -23,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -83,7 +83,7 @@
       <updated>1634442829041</updated>
       <workItem from="1634442830528" duration="4000" />
       <workItem from="1634443268419" duration="19306000" />
-      <workItem from="1634617392316" duration="6835000" />
+      <workItem from="1634617392316" duration="18299000" />
     </task>
     <servers />
   </component>

@@ -1,4 +1,4 @@
-public class Student
+public class Student implements Commenter
 {
     private String name;
     private int ID;
@@ -16,5 +16,9 @@ public class Student
     public int getID()
     {
         return ID;
+    }
+    
+    public String toString() {
+        return ID + ". " + name;
     }
 }
