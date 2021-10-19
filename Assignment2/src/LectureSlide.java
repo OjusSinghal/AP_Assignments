@@ -1,4 +1,5 @@
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class LectureSlide implements LectureMaterials
@@ -23,14 +24,16 @@ public class LectureSlide implements LectureMaterials
     
     public int getSlideCount() { return slideCount; }
     
-    public String toString() {
-        StringBuilder slideView = new StringBuilder("Title: " + topic + '\n');
+    public String viewMaterial() {
+        StringBuilder slideView = new StringBuilder("\nTitle: " + topic + '\n');
         for (int i = 0; i < slideCount; i++) {
-            slideView.append("Slide ").append(i + 1).append(content.get(i)).append("\n");
+            slideView.append("Slide ").append(i + 1).append(": ").append(content.get(i)).append("\n");
         }
         slideView.append("Number of slides: ").append(slideCount).append("\n");
-        slideView.append("Date of upload: ").append(dateTime).append("\n");
-        slideView.append("Uploaded by: ").append(instructor).append("\n");
+        DateTimeFormatter form = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        slideView.append("Date of upload: ").append(dateTime.format(form)).append("\n");
+        slideView.append("Uploaded by: ").append(instructor.getName());
         return slideView.toString();
     }
+    
 }

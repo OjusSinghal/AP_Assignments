@@ -1,7 +1,7 @@
 public class Student implements Commenter
 {
-    private String name;
-    private int ID;
+    private final String name;
+    private final int ID;
     
     public Student(String name, int ID) {
         this.ID = ID;

@@ -1,4 +1,4 @@
 public interface Commenter
 {
-    public String getName();
+    String getName();
 }

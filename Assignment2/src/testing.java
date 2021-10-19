@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class testing
 {
     public static void main(String[] args) {
-        String[] arr = new String[5];
+        final String[] arr = new String[5];
         System.out.println(arr.length);
         arr[2] = "asdf";
         

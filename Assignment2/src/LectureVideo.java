@@ -1,4 +1,5 @@
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class LectureVideo implements LectureMaterials
 {
@@ -18,10 +19,11 @@ public class LectureVideo implements LectureMaterials
     
     public String getFileName() { return fileName; }
     
-    public String toString() {
-        return "Title of video: " + topic +
+    public String viewMaterial() {
+        DateTimeFormatter form = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        return "\nTitle of video: " + topic +
                 "\nVideo file: " + fileName +
-                "\nDate of upload: " + dateTime +
-                "\nUploaded by: " + instructor + '\n';
+                "\nDate of upload: " + dateTime.format(form) +
+                "\nUploaded by: " + instructor.getName();
     }
 }

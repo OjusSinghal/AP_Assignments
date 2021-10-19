@@ -23,7 +23,7 @@ public class Assignment implements Assessable
         
         public String toString() {
             if (marks == -1) return "Submission: " + fileName;
-            return "Submission: " + fileName + "\nMarks scored: " + marks + "\nGraded by: " + instructor;
+            return "Submission: " + fileName + "\nMarks scored: " + marks + "\nGraded by: " + instructor.getName();
         }
     }
     
@@ -51,7 +51,9 @@ public class Assignment implements Assessable
     
     @Override
     public boolean isGraded(Student student) {
-        return submissions[student.getID()].getMarks() >= 0;
+        if (submissions[student.getID()] != null)
+            return submissions[student.getID()].getMarks() >= 0;
+        return false;
     }
     
     public String toString() {
@@ -70,7 +72,7 @@ public class Assignment implements Assessable
     @Override
     public boolean isSubmitted(Student s)
     {
-        return (submissions[s.getID()].fileName != null);
+        return (submissions[s.getID()] != null);
     }
     
     @Override

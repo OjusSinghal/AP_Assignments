@@ -23,17 +23,17 @@ public class Quiz implements Assessable
         public String getAnswer() { return answer; }
         public String toString() {
             if (marks == -1) return "Submission: " + answer;
-            return "Submission: " + answer + "\nMarks scored: " + marks + "\nGraded by: " + instructor;
+            return "Submission: " + answer + "\nMarks scored: " + marks + "\nGraded by: " + instructor.getName();
         }
     }
     
     private final String question;
-    private Submission[] submissions;
+    private final Submission[] submissions;
     private boolean open;
     
     public Quiz(String question, int studentNumber)
     {
-        this.question = question;
+        this.question = question + " ";
         this.submissions = new Submission[studentNumber];
         this.open = true;
     }
@@ -53,7 +53,7 @@ public class Quiz implements Assessable
     @Override
     public boolean isSubmitted(Student s)
     {
-        return submissions[s.getID()].getAnswer() != null;
+        return submissions[s.getID()] != null;
     }
     
     public boolean isOpen() { return open; }
@@ -80,7 +80,9 @@ public class Quiz implements Assessable
     }
     
     public boolean isGraded(Student student) {
-        return submissions[student.getID()].getMarks() >= 0;
+        if (submissions[student.getID()] != null)
+            return submissions[student.getID()].getMarks() >= 0;
+        return false;
     }
     
     public void close() { open = false; }

@@ -3,11 +3,11 @@ import java.util.Scanner;
 
 public class Course
 {
-    private ArrayList<Instructor> instructors;
-    private ArrayList<Student> students;
-    private ArrayList<Assessable> assessables;
-    private ArrayList<LectureMaterials> lectureMaterials;
-    private ArrayList<Comment> comments;
+    private final ArrayList<Instructor> instructors;
+    private final ArrayList<Student> students;
+    private final ArrayList<Assessable> assessables;
+    private final ArrayList<LectureMaterials> lectureMaterials;
+    private final ArrayList<Comment> comments;
     
     public Course() {
         this.instructors = new ArrayList<>();
@@ -40,11 +40,13 @@ public class Course
     public String printLectureMaterials() {
         StringBuilder lm = new StringBuilder();
         for (LectureMaterials l : lectureMaterials)
-            lm.append(l.toString());
+            lm.append(l.viewMaterial()).append('\n');
+        if (lm.toString().equals("")) return "No Lecture materials currently added.";
         return lm.toString();
     }
     
     public String printAssessables() {
+        if (assessables.size() == 0) return "No assessments currently added.";
         StringBuilder pa = new StringBuilder();
         for (int i = 0; i < assessables.size(); i++)
             pa.append("ID: ").append(i).append(" ").append(assessables.get(i).toString()).append("\n____________________________\n");
@@ -54,7 +56,7 @@ public class Course
     public ArrayList<Assessable> getPendingAssessables(Student student) {
         ArrayList<Assessable> pending = new ArrayList<>();
         for (Assessable assessable : assessables)
-            if (!assessable.isSubmitted(student)) pending.add(assessable);
+            if (assessable.isOpen() && !assessable.isSubmitted(student)) pending.add(assessable);
         return pending;
     }
     
@@ -67,17 +69,23 @@ public class Course
     
     public void printGradedAssessables(Student student) {
         for (Assessable assessable : assessables)
-            if (assessable.isGraded(student)) System.out.println(assessable.getSubmission(student));
+            if (assessable.isSubmitted(student) &&
+                    assessable.isGraded(student)) System.out.println(assessable.getSubmission(student));
     }
     
     public void printUngradedAssessables(Student student) {
         for (Assessable assessable : assessables)
-            if (!assessable.isGraded(student)) System.out.println(assessable.getSubmission(student));
+            if (assessable.isSubmitted(student) &&
+                    !assessable.isGraded(student)) System.out.println(assessable.getSubmission(student));
     }
     
     public void addComment(Commenter commenter) {
-        System.out.println("Enter comment: ");
+        System.out.print("Enter comment: ");
         Scanner sc = new Scanner(System.in);
         comments.add(new Comment(sc.nextLine(), commenter.getName()));
+    }
+    
+    public void viewAllComments() {
+        for (Comment c : comments) System.out.println(c);
     }
 }

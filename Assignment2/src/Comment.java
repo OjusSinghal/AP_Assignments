@@ -1,4 +1,5 @@
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Comment
 {
@@ -13,7 +14,8 @@ public class Comment
     }
     
     public String toString() {
-        return content + " - " + name + '\n' + dateTime.toString() + '\n';
+        DateTimeFormatter form = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        return content + " - " + name + '\n' + dateTime.format(form) + '\n';
     }
     
 }
