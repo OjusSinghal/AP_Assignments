@@ -64,64 +64,109 @@ public class BackPack
                 Instructor instructor = instructors.get(scanner.nextInt());
                 System.out.println("Welcome " + instructor.getName());
                 System.out.println(instructorMenu);
-                int query = scanner.nextInt();
-                switch (query) {
-                    case 1: {
-                        System.out.println("""
-                                1. Add lecture slide
-                                2. Add lecture video""");
-                        int query2 = scanner.nextInt();
-                        if (query2 == 1) {
-                            System.out.println("Enter topic of slides: ");
-                            String topic = scanner.nextLine();
-                            System.out.println("Enter number of slides: ");
-                            int slideCount = scanner.nextInt();
-                            scanner.nextLine();
-                            System.out.println("Enter content of slides");
-                            ArrayList<String> content = new ArrayList<>(slideCount);
-                            for (int i = 0; i < slideCount; i++) {
-                                System.out.print("Content of slide " + Integer.toString(i) + ": ");
-                                content.set(i, scanner.nextLine());
+                int query = 0;
+                while (query != 9) {
+                    query = scanner.nextInt();
+                    switch (query) {
+                        case 1: {
+                            System.out.println("""
+                                    1. Add lecture slide
+                                    2. Add lecture video""");
+                            int query2 = scanner.nextInt();
+                            if (query2 == 1) {
+                                System.out.println("Enter topic of slides: ");
+                                String topic = scanner.nextLine();
+                                System.out.println("Enter number of slides: ");
+                                int slideCount = scanner.nextInt();
+                                scanner.nextLine();
+                                System.out.println("Enter content of slides");
+                                ArrayList<String> content = new ArrayList<>(slideCount);
+                                for (int i = 0; i < slideCount; i++) {
+                                    System.out.print("Content of slide " + Integer.toString(i) + ": ");
+                                    content.set(i, scanner.nextLine());
+                                }
+                                course.addLectureMaterials(new LectureSlide(content, topic, instructor));
                             }
-                            course.addLectureMaterials(new LectureSlide(content, topic));
-                        }
-                        else if (query2 == 2) {
-                            System.out.print("Enter topic of video: ");
-                            String videoTopic = scanner.nextLine();
-                            System.out.print("Enter filename of video: ");
-                            String fileName = scanner.nextLine().trim();
-                            if (!fileName.substring(fileName.length() - 4).equals(".mp4")) {
-                                System.out.println("Incorrect file extension. Try again.");
-                                continue;
+                            else if (query2 == 2) {
+                                System.out.print("Enter topic of video: ");
+                                String videoTopic = scanner.nextLine();
+                                System.out.print("Enter filename of video: ");
+                                String fileName = scanner.nextLine().trim();
+                                if (!fileName.substring(fileName.length() - 4).equals(".mp4")) {
+                                    System.out.println("Incorrect file extension. Try again.");
+                                    continue;
+                                }
+                                course.addLectureMaterials(new LectureVideo(videoTopic, fileName, instructor));
                             }
-                            course.addLectureMaterials(new LectureVideo(videoTopic, fileName, instructor));
+                            break;
                         }
-                        break;
-                    }
-                    case 2: {
-                        System.out.println("""
-                                1. Add assignment
-                                2. Add Quiz""");
-                        int query2 = scanner.nextInt();
-                        scanner.nextLine();
-                        if (query2 == 1) {
-                            System.out.println("Enter problem statement: ");
-                            String problem = scanner.nextLine();
-                            System.out.println("Enter maximum marks: ");
-                            int maxMarks = scanner.nextInt();
+                        case 2: {
+                            System.out.println("""
+                                    1. Add assignment
+                                    2. Add Quiz""");
+                            int query2 = scanner.nextInt();
                             scanner.nextLine();
-                            course.addAssessables(new Assignment(problem, maxMarks));
+                            if (query2 == 1) {
+                                System.out.println("Enter problem statement: ");
+                                String problem = scanner.nextLine();
+                                System.out.println("Enter maximum marks: ");
+                                int maxMarks = scanner.nextInt();
+                                scanner.nextLine();
+                                course.addAssessables(new Assignment(problem, maxMarks, students.size()));
+                            }
+                            else if (query2 == 2) {
+                                System.out.println("Enter quiz question: ");
+                                String question = scanner.nextLine();
+                                course.addAssessables(new Quiz(question, students.size()));
+                            }
+                            break;
                         }
-                        break;
+                        case 3: {
+                            System.out.println(course.printLectureMaterials());
+                            break;
+                        }
+                        case 4: {
+                            System.out.println(course.printAssessables());
+                            break;
+                        }
+                        case 5: {
+            
+                        }
+                        case 6:
+                        case 7:
+                        case 8:
+                        case 9: {
+                            break;
+                        }
                     }
-                    case 3:
-                    case 4:
-                    case 5:
-                    case 6:
-                    case 7:
-                    case 8:
-                    case 9:
-                    
+                }
+                
+            }
+            else if (opt == 2) {
+                System.out.println("Students:");
+                for (int i = 0; i < students.size(); i++)
+                    System.out.println(Integer.toString(i) + " - " + students.get(i).getName());
+                System.out.print("Choose ID: ");
+                Student student = students.get(scanner.nextInt());
+                scanner.nextLine();
+                int query = 0;
+                while (query != 7) {
+                    query = scanner.nextInt();
+                    scanner.nextLine();
+                    switch (query) {
+                        case 1 : {
+                            System.out.println(course.printLectureMaterials());
+                            break;
+                        }
+                        case 2 : {
+                            System.out.println(course.printAssessables());
+                            break;
+                        }
+                        case 3 : {
+                        
+                        }
+                        
+                    }
                 }
                 
             }

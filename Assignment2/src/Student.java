@@ -7,4 +7,14 @@ public class Student
         this.ID = ID;
         this.name = name;
     }
+    
+    public String getName()
+    {
+        return name;
+    }
+    
+    public int getID()
+    {
+        return ID;
+    }
 }
