@@ -6,28 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="23940152-7062-464a-9199-7c1a8671888e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment2/Assessable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment2/Assessable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment2/Assignment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment2/Assignment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment2/BackPack.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment2/BackPack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment2/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment2/Comment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment2/Course.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment2/Course.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment2/Instructor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment2/Instructor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment2/LectureMaterials.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment2/LectureMaterials.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment2/LectureSlide.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment2/LectureSlide.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment2/LectureVideo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment2/LectureVideo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment2/Quiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment2/Quiz.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment2/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment2/Student.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assignment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BackPack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackPack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LectureMaterials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LectureMaterials.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LectureSlide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LectureSlide.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LectureVideo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LectureVideo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Quiz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/testing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/testing.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +75,7 @@
       <updated>1634442829041</updated>
       <workItem from="1634442830528" duration="4000" />
       <workItem from="1634443268419" duration="19306000" />
-      <workItem from="1634617392316" duration="26557000" />
+      <workItem from="1634617392316" duration="28247000" />
     </task>
     <servers />
   </component>
